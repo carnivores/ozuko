@@ -1,6 +1,6 @@
 
 Travelling salesman for 157 cities, solved with evolutionary algorithm.
-
+I've used OpenMP for making the most costly function (get_path_length) executed parallel.
 
 Output:
 
