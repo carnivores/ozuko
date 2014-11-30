@@ -3,7 +3,8 @@
 Output:
 
 
-`[INFO] Iteration 1. Best path length: 5040.9
+```python
+[INFO] Iteration 1. Best path length: 5040.9
 [INFO] Iteration 2. Best path length: 4906.9
 [INFO] Iteration 3. Best path length: 5194.14
 [INFO] Iteration 4. Best path length: 4986.45
@@ -105,6 +106,6 @@ Output:
 [INFO] Iteration 100. Best path length: 3809.91
 [FINAL] Best path length: 3720.38 reached in 90 iteration.
 Time spent solving 41.9102
-`
+```
 
 
