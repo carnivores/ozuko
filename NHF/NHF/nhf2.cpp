@@ -6,7 +6,8 @@
 #include <time.h>
 #include <ctime>
 
-#define N 2000040000
+#define N 1948027565
+#define A 1948027525
 //SMALLEST1948027545
 //4294967295
 
@@ -72,10 +73,7 @@ int main(){
 	static const string arr[] = { "and", "as", "assert", "break", "class", "continue", "def", "del", "elif", "else", "except", "exec", "finally", "for", "from", "if", "import", "in", "is", "lambda", "not", "or", "pass", "print", "raise", "return", "try", "while", "with", "yield", "global" };
 	vector<string> strings(arr, arr + sizeof(arr) / sizeof(arr[0]));
 
-	int chunk = 100;
-#pragma omp parallel shared(chunk, gfound) private(i,j,k, tid, hashes, harr, hash_value)
-	{
-#pragma omp for schedule(dynamic, chunk)
+
 		//pragma omp for nowait
 		for (i = 1948027435; i < N; i++){
 			hashes.clear();
@@ -111,15 +109,6 @@ int main(){
 			// IF J REACHED MAXIMUM VALUE - WE HAVE A WINNER
 			if (hashes.size() == strings.size()){
 				cout << "[^] Value found: " << i << endl;
-				gfound = 1;
-				// if (!check_all_duplicates(hashes)){
-				//      print_result(hashes, strings);
-				//      cout << "[^] Value found: " << i << endl;
-				// }
-				//gettimeofday(&b, 0);
-				//std::cout << "difference: " << (b.tv_sec - a.tv_sec) << std::endl;
-
-
 			}
 			tid = omp_get_thread_num();
 			if (i != 0 && i % 100000000 == 0){
@@ -127,11 +116,11 @@ int main(){
 			}
 
 
-		}
+
 	}
 
 
-std:cout << endl << gfound << endl;
+	std:cout << endl << gfound << endl;
 
 	return 0;
 }
