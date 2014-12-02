@@ -10,7 +10,7 @@ using namespace std;
 int f(int i) {
 	int i4_huge = 2147483647;
 	int j, k, value = i;
-	for (j = 1; j <= 5; j++) {
+	for (j = 1; j <= 5; ++j) {
 		k = value / 127773;
 		value = 16807 * (value - k * 127773) - k * 2836;
 		if (value <= 0)
@@ -42,11 +42,11 @@ int main(int argc, char *argv[]) {
 
 	omp_set_num_threads(numberOfThreads);
 	#pragma omp parallel for shared(c, N, counter)
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < N; ++i)
 	{
 		if (f(i) == c)
 		{
-			counter++;
+			++counter;
 		}
 	}
 
