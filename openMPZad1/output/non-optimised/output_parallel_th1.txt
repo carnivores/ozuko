@@ -1,0 +1,6 @@
+OpenMP Zadanie 1. Wersja rownolegla.
+Liczba watkow: 1
+Liczba usera: 155.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 27974
+Press any key to continue . . . 
