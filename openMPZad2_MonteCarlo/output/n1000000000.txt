@@ -1,0 +1,48 @@
+Podaj liczbe watkow: 1
+OK, obliczam calke dla funkcji f(x) = (3*(x*x*x) + 2*(x*x) + x) / ((x*x) - 1)
+z parametrami: n=1000000000, a=0 oraz b=0.5
+Liczba watkow: 1
+Prosze o chwilunie cierpliwosci.
+LICZEM...
+
+Wartosc calki: -0.298969
+
+Obliczenie tej pieknej caleczki zajelo mi 33360 ms.
+Obliczenie tej pieknej caleczki zajelo mi 33190 ms.
+Obliczenie tej pieknej caleczki zajelo mi 33389 ms.
+
+
+************************************************************************************
+
+
+Podaj liczbe watkow: 2
+OK, obliczam calke dla funkcji f(x) = (3*(x*x*x) + 2*(x*x) + x) / ((x*x) - 1)
+z parametrami: n=1000000000, a=0 oraz b=0.5
+Liczba watkow: 2
+Prosze o chwilunie cierpliwosci.
+LICZEM...
+
+Wartosc calki: -0.298975
+
+Obliczenie tej pieknej caleczki zajelo mi 16721 ms.
+Obliczenie tej pieknej caleczki zajelo mi 16904 ms.
+Obliczenie tej pieknej caleczki zajelo mi 16842 ms.
+
+
+************************************************************************************
+
+
+Podaj liczbe watkow: 4
+OK, obliczam calke dla funkcji f(x) = (3*(x*x*x) + 2*(x*x) + x) / ((x*x) - 1)
+z parametrami: n=1000000000, a=0 oraz b=0.5
+Liczba watkow: 4
+Prosze o chwilunie cierpliwosci.
+LICZEM...
+
+Wartosc calki: -0.298993
+
+Obliczenie tej pieknej caleczki zajelo mi 8760 ms.
+Obliczenie tej pieknej caleczki zajelo mi 8763 ms.
+Obliczenie tej pieknej caleczki zajelo mi 8677 ms.
+
+

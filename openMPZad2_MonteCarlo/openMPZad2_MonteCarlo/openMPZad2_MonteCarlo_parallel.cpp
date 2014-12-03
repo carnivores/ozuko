@@ -23,7 +23,6 @@ double f(double x) {
 }
 
 
-
 int _tmain(int argc, _TCHAR* argv[])
 {
 	unsigned int n = 100000000; // liczba punktow
@@ -59,17 +58,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << "Prosze o chwilunie cierpliwosci." << endl;
 	cout << "LICZEM...\n" << endl;
 
-
 	double dx = b - a;
-
 	double integral;
-	double sum = 0;
-	 
+	double sum = 0;	 
 
 	clock_t start = clock();
-
-	int threadNumber = omp_get_thread_num(); // numer watku
-	srand((int)time(NULL) * threadNumber);
+	
+	srand((int)time(NULL) * omp_get_thread_num());
 
 #pragma omp parallel for shared(a, dx, n) reduction(+:sum)
 	for (int i = 1; i < n; ++i)
@@ -87,4 +82,3 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 
 }
-

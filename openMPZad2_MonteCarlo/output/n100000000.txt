@@ -1,0 +1,48 @@
+D:\dev\ozuko\openMPZad2_MonteCarlo\x64\Release>openMPZad2_MonteCarlo.exe
+Podaj liczbe watkow: 1
+OK, obliczam calke dla funkcji f(x) = (3*(x*x*x) + 2*(x*x) + x) / ((x*x) - 1)
+z parametrami: n=100000000, a=0 oraz b=0.5
+Liczba watkow: 1
+Prosze o chwilunie cierpliwosci.
+LICZEM...
+
+Wartosc calki: -0.298929
+
+Obliczenie tej pieknej caleczki zajelo mi 3206 ms.
+Obliczenie tej pieknej caleczki zajelo mi 3201 ms.
+Obliczenie tej pieknej caleczki zajelo mi 3106 ms.
+
+
+************************************************************************************
+
+
+Podaj liczbe watkow: 2
+OK, obliczam calke dla funkcji f(x) = (3*(x*x*x) + 2*(x*x) + x) / ((x*x) - 1)
+z parametrami: n=100000000, a=0 oraz b=0.5
+Liczba watkow: 2
+Prosze o chwilunie cierpliwosci.
+LICZEM...
+
+Wartosc calki: -0.299006
+
+Obliczenie tej pieknej caleczki zajelo mi 1615 ms.
+Obliczenie tej pieknej caleczki zajelo mi 1619 ms.
+Obliczenie tej pieknej caleczki zajelo mi 1689 ms.
+
+
+************************************************************************************
+
+
+Podaj liczbe watkow: 4
+OK, obliczam calke dla funkcji f(x) = (3*(x*x*x) + 2*(x*x) + x) / ((x*x) - 1)
+z parametrami: n=100000000, a=0 oraz b=0.5
+Liczba watkow: 4
+Prosze o chwilunie cierpliwosci.
+LICZEM...
+
+Wartosc calki: -0.299002
+
+Obliczenie tej pieknej caleczki zajelo mi 916 ms.
+Obliczenie tej pieknej caleczki zajelo mi 867 ms.
+Obliczenie tej pieknej caleczki zajelo mi 887 ms.
+
