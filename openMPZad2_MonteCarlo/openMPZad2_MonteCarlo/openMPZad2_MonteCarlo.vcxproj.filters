@@ -32,5 +32,8 @@
     <ClCompile Include="openMPZad2_MonteCarlo_basic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="openMPZad2_MonteCarlo_parallel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
