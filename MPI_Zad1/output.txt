@@ -1,0 +1,42 @@
+root@jade:/home/x/dev/MPI_Zad1# mpiexec -n 1 ./mpizad1 155
+MPI Zadanie 1.
+Liczba usera: 155.
+Liczba procesow: 1.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 4.9365
+
+root@jade:/home/x/dev/MPI_Zad1# mpiexec -n 2 ./mpizad1 155
+MPI Zadanie 1.
+Liczba usera: 155.
+Liczba procesow: 2.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 2.48982
+
+root@jade:/home/x/dev/MPI_Zad1# mpiexec -n 3 ./mpizad1 155
+MPI Zadanie 1.
+Liczba usera: 155.
+Liczba procesow: 3.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 1.66635
+
+root@jade:/home/x/dev/MPI_Zad1# mpiexec -n 4 ./mpizad1 155
+MPI Zadanie 1.
+Liczba usera: 155.
+Liczba procesow: 4.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 1.27804
+
+root@jade:/home/x/dev/MPI_Zad1# mpiexec -n 5 ./mpizad1 155
+MPI Zadanie 1.
+Liczba usera: 155.
+Liczba procesow: 5.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 1.26275
+
+root@jade:/home/x/dev/MPI_Zad1# mpiexec -n 6 ./mpizad1 155
+MPI Zadanie 1.
+Liczba usera: 155.
+Liczba procesow: 6.
+Liczba zgodnych wartosci: 1
+Czas trwania programu: 1.27683
+

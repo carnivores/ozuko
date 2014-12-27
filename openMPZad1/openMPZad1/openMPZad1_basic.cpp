@@ -21,7 +21,35 @@ int f(int i) {
 	return value;
 }
 
-int main(int argc, char *argv[]) {	int c = 0;		int counter = 0;		const int N = 200000000;	clock_t start = clock();	if (argv[1] != NULL)	{		c = atoi(argv[1]);	}	cout << "OpenMP Zadanie 1. Wersja sekwencyjna." << endl;	cout << "Liczba usera: " << c << "." << endl;	for (int i = 0; i < N; i++)	{		if (f(i) == c)		{			counter++;		}	}	cout << "Liczba zgodnych wartosci: " << counter << endl;
+int main(int argc, char *argv[]) {
+	int c = 0;
+	
+	int counter = 0;	
+	const int N = 200000000;
+
+	clock_t start = clock();
+
+
+	if (argv[1] != NULL)
+	{
+		c = atoi(argv[1]);
+	}
+
+	cout << "OpenMP Zadanie 1. Wersja sekwencyjna." << endl;
+	cout << "Liczba usera: " << c << "." << endl;
+
+
+	for (int i = 0; i < N; i++)
+	{
+		if (f(i) == c)
+		{
+			counter++;
+		}
+	}
+
+	cout << "Liczba zgodnych wartosci: " << counter << endl;
+
+
 	clock_t end = clock();
 	cout << "Czas trwania programu: " << end - start << endl;
 
