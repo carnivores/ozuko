@@ -94,12 +94,15 @@ int main(int argc, char* argv[])
 	for (int k = 0; k < matrixDim; ++k)
 	{	
 		for (int i = 0; i < matrixDim; ++i)
-		{			
+		{	
+			// podzial na procesy?
 			for (int j = 0; j < matrixDim; ++j)
 			{					
 				C[i * matrixDim + j] += A[(i * matrixDim) + ((j + k) % matrixDim)] * B[(((i + k) % matrixDim) * matrixDim) + (j)];				
 			}
 		}
+
+		// bariera i scalenie
 
 		cout << endl << "krok " << k << ": " << endl;
 		printMatrix(C);
