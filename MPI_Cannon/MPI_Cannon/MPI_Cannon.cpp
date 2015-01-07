@@ -10,14 +10,11 @@
 using namespace std;
 
 // rozmiar macierzy (NxN)
-int matrixRows = 3;
-int matrixCols = 3;
-int matrixSize = matrixRows * matrixCols;
+int matrixDim = 3;
+int matrixSize = matrixDim * matrixDim;
 
 // funkcje
 void printMatrix(int* M);
-void matrixMultAdd(int* A, int* B, int* C, int len); // w k krokach mnozy poszczegolne komorki maciezy i wynik dodaje do maciezy wynikowej
-
 
 
 int main(int argc, char* argv[])
@@ -39,10 +36,6 @@ int main(int argc, char* argv[])
 	int* C = new int[matrixSize];
 	fill_n(C, matrixSize, 0);
 
-	// CAPTURE TIME
-	clock_t begin_pt = clock();
-
-
 	cout << "Tablica A:" << endl;
 	printMatrix(A);
 	cout << endl << "Tablica B:" << endl;
@@ -50,14 +43,76 @@ int main(int argc, char* argv[])
 	cout << endl << "Tablica C:" << endl;
 	printMatrix(C);
 
+	// czas start
+	clock_t begin_pt = clock();
 
-	matrixMultAdd(A, B, C, matrixRows);
-	cout << endl << "Macierze pomnozone sekwencyjnie:" << endl;
-	printMatrix(C);
+	// faza przygotowawcza - pierwsze przesuniecie
+	int* tempMatrix = new int[matrixDim];
+	int pos = 0;
+
+	// shift A
+	for (int i = 1; i < matrixDim; ++i)
+	{
+		pos = i;
+		for (int j = 0; j < matrixDim; ++j)
+		{			
+			tempMatrix[j] = A[(i * matrixDim) + (pos % matrixDim)];			
+			++pos;
+		}
+
+		for (int j = 0; j < matrixDim; ++j)
+		{			
+			A[(i * matrixDim) + (j)] = tempMatrix[j];			
+		}
+	}
+
+	// shift B
+	for (int i = 1; i < matrixDim; ++i)
+	{
+		pos = i;
+		for (int j = 0; j < matrixDim; ++j)
+		{
+			tempMatrix[j] = B[((pos % matrixDim) * matrixDim) + (i)];			
+			++pos;
+		}
+
+		for (int j = 0; j < matrixDim; ++j)
+		{
+			B[(j * matrixDim) + (i)] = tempMatrix[j];
+		}
+	}
+	
+	// po shificie:
+	cout << endl << "A po shifice: " << endl;
+	printMatrix(A);
+
+	cout << endl << "B po shifice: " << endl;
+	printMatrix(B);
 
 
+	// przemnazanie komorek w k krokach z sumowaniem z przesunieciami
+	for (int k = 0; k < matrixDim; ++k)
+	{	
+		for (int i = 0; i < matrixDim; ++i)
+		{			
+			for (int j = 0; j < matrixDim; ++j)
+			{					
+				C[i * matrixDim + j] += A[(i * matrixDim) + ((j + k) % matrixDim)] * B[(((i + k) % matrixDim) * matrixDim) + (j)];				
+			}
+		}
+
+		cout << endl << "krok " << k << ": " << endl;
+		printMatrix(C);
+	}
+
+	// podsumowanie czasu
 	cout << endl << "Czas trwania programu: " << double(clock() - begin_pt) / CLOCKS_PER_SEC << endl;
 
+	// sprzatanie
+	delete(A);
+	delete(B);
+	delete(C);
+	delete(tempMatrix);
 	
 	system("PAUSE");
 	
@@ -68,26 +123,13 @@ int main(int argc, char* argv[])
 
 void printMatrix(int* M)
 {
-	for (int i = 0; i < matrixRows; i++)
+	for (int i = 0; i < matrixDim; i++)
 	{
-		for (int j = 0; j < matrixCols; j++)
+		for (int j = 0; j < matrixDim; j++)
 		{
-			cout << M[i * matrixRows + j] << "\t";
+			cout << M[i * matrixDim + j] << "\t";
 		}
 		cout << endl;
-	}
-}
-
-
-void matrixMultAdd(int* A, int* B, int* C, int len)
-{
-	int i, j, k;
-	for (i = 0; i < len; i++) {
-		for (j = 0; j < len; j++) {
-			for (k = 0; k < len; k++) {
-				C[i * len + j] += A[i * len + k] * B[k * len + j];
-			}
-		}
 	}
 }
 
